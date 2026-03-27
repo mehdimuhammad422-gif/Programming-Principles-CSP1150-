@@ -1,3 +1,5 @@
+##Syed MEHDI
+##10725191
 import time
 
 import random
