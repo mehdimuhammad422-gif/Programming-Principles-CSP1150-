@@ -1,6 +1,32 @@
 import time
 
 import random
+
+def random_list(quantity, minimum, maximum):
+    lst = []
+    for i in range(quantity):
+        lst.append(random.randint(minimum, maximum))
+    return lst
+
+def ask_question(question, answer):
+    while True:
+        userAns = input(question + " ")
+        
+        if userAns.isdigit():
+            userAns = int(userAns)
+            break
+        else:
+            print("Enter a number please!")
+
+    if userAns == answer:
+        print("Correct!")
+        return True
+    else:
+        print("Incorrect! Correct answer was", answer)
+        return False
+
+
+
 print ('Enter Your Name: ')
 s_name=input()
 print ('Enter your roll number: ')
@@ -49,70 +75,8 @@ for i in range(1, qNum + 1):
 
     if i == qNum:
         print("[!!!] Challenge Question [!!!]")
-        list_quest = []
-        for j in range(numCount * 2):
-            list_quest.append(random.randint(minNum, maxNum))
+        list_quest = random_list(numCount * 2, minNum, maxNum)
     else:
-        list_quest = []
-        for j in range(numCount):
-            list_quest.append(random.randint(minNum, maxNum))
+        list_quest = random_list(numCount, minNum, maxNum)
 
     print("List:", list_quest)
-randType = random.randint(1, 4)
-
-
-if randType == 1:
-    answer = sum(list_quest)
-    userAns = int(input("What is the sum of the numbers in this list? "))
-
-    if userAns == answer:
-        print("Correct!")
-        score += 1
-    else:
-        print("Incorrect! Correct answer was", answer)
-
-elif randType == 2:
-    answer = max(list_quest) - min(list_quest)
-    userAns = int(input("What is the difference between min and max numbers? "))
-
-    if userAns == answer:
-        print("Correct!")
-        score += 1
-    else:
-        print("Incorrect! Correct answer was", answer)
-
-
-elif randType == 3:
-    avg = sum(list_quest) // len(list_quest)
-    count = 0
-
-    for n in list_quest:
-        if n > avg:
-            count += 1
-
-    answer = count
-    userAns = int(input(f"How many numbers are higher than {avg}? "))
-
-    if userAns == answer:
-        print("Correct!")
-        score += 1
-    else:
-        print("Incorrect! Correct answer was", answer)
-
-else:
-    x = random.randint(0, len(list_quest) - 1)
-    y = random.randint(0, len(list_quest) - 1)
-
-    while x == y:
-        y = random.randint(0, len(list_quest) - 1)
-
-    print("Positions are", x, "and", y)
-
-    answer = list_quest[x] * list_quest[y]
-    userAns = int(input("What is the product of the numbers at these positions? "))
-
-    if userAns == answer:
-        print("Correct!")
-        score += 1
-    else:
-        print("Incorrect! Correct answer was", answer)
