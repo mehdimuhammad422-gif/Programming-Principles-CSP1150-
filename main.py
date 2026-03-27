@@ -127,3 +127,16 @@ for i in range(1, qNum + 1):
 
         if result:
             score += 1
+endTime = time.time()
+totalTime = endTime - startTime
+
+print("\nTest Complete!  You took", round(totalTime, 2), "seconds.")
+
+print("You scored", round((score / qNum) * 100), "%", 
+      f"({score}/{qNum} questions correct).")
+
+avgTime = totalTime / qNum
+print("Average of", round(avgTime, 2), "seconds per question.")
+
+if score == qNum:
+    print("Perfect score, well done!")
