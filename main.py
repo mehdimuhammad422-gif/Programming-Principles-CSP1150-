@@ -80,50 +80,50 @@ for i in range(1, qNum + 1):
         list_quest = random_list(numCount, minNum, maxNum)
 
     print("List:", list_quest)
-randType = random.randint(1, 4)
+    randType = random.randint(1, 4)
 
 
-if randType == 1:
-    answer = sum(list_quest)
-    result = ask_question("What is the sum of the numbers in this list?", answer)
+    if randType == 1:
+        answer = sum(list_quest)
+        result = ask_question("What is the sum of the numbers in this list?", answer)
 
-    if result:
-        score += 1
+        if result:
+            score += 1
 
-elif randType == 2:
-    answer = max(list_quest) - min(list_quest)
-    result = ask_question("What is the difference between the minimum and maximum numbers in this list?", answer)
+    elif randType == 2:
+        answer = max(list_quest) - min(list_quest)
+        result = ask_question("What is the difference between the minimum and maximum numbers in this list?", answer)
 
-    if result:
-        score += 1
-
-
-elif randType == 3:
-    avg = sum(list_quest) // len(list_quest)
-    count = 0
-
-    for n in list_quest:
-        if n > avg:
-            count += 1
-
-    answer = count
-    result = ask_question(f"How many numbers in this list are higher than {avg}?", answer)
-
-    if result:
-        score += 1
+        if result:
+            score += 1
 
 
-else:
-    x = random.randint(1, len(list_quest))
-    y = random.randint(1, len(list_quest))
+    elif randType == 3:
+        avg = sum(list_quest) // len(list_quest)
+        count = 0
 
-    while x == y:
+        for n in list_quest:
+            if n > avg:
+                count += 1
+
+        answer = count
+        result = ask_question(f"How many numbers in this list are higher than {avg}?", answer)
+
+        if result:
+            score += 1
+
+
+    else:
+        x = random.randint(1, len(list_quest))
         y = random.randint(1, len(list_quest))
 
-    print("Positions are", x, "and", y)
+        while x == y:
+            y = random.randint(1, len(list_quest))
 
-    answer = list_quest[x - 1] * list_quest[y - 1]
-    result = ask_question("What is the product of the numbers in these positions?", answer)
+        print("Positions are", x, "and", y)
 
-    if result:
-        score += 1
+        answer = list_quest[x - 1] * list_quest[y - 1]
+        result = ask_question("What is the product of the numbers in these positions?", answer)
+
+        if result:
+            score += 1
