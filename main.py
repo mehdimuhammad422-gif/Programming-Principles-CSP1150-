@@ -1,3 +1,5 @@
+import time
+
 print ('Enter Your Name: ')
 s_name=input()
 print ('Enter your roll number: ')
@@ -28,3 +30,13 @@ while level not in ['E', 'e', 'M', 'm', 'H', 'h']:
         maxNum = 20
     else:
         print('Invalid input. Please select E, M, or H.')
+
+
+print("Difficulty selected!")
+print("Your test will have", qNum, "questions")
+print("Each question will have", numCount, "numbers between", minNum, "and", maxNum)
+print("Last question will be a challenge question!")
+input("Press Enter to begin...")
+
+startTime = time.time()
+score = 0
