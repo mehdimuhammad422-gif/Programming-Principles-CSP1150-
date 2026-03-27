@@ -1,5 +1,6 @@
 import time
 
+import random
 print ('Enter Your Name: ')
 s_name=input()
 print ('Enter your roll number: ')
@@ -40,3 +41,20 @@ input("Press Enter to begin...")
 
 startTime = time.time()
 score = 0
+
+
+for i in range(1, qNum + 1):
+    print("\nQuestion", i, "of", qNum)
+    print("Current Score:", score)
+
+    if i == qNum:
+        print("[!!!] Challenge Question [!!!]")
+        list_quest = []
+        for j in range(numCount * 2):
+            list_quest.append(random.randint(minNum, maxNum))
+    else:
+        list_quest = []
+        for j in range(numCount):
+            list_quest.append(random.randint(minNum, maxNum))
+
+    print("List:", list_quest)
