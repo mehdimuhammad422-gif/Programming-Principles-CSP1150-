@@ -27,7 +27,7 @@ def ask_question(question, answer):
         print("Incorrect! Correct answer was", answer)
         return False
 
-
+##My name is Syed Mehdi, and I understand that we can either statically add the name and roll number or take user input. I am a bit confused about which approach to choose. If we use static values, we can simply print them directly, but taking user input makes the program more flexible.
 
 print ('Enter Your Name: ')
 s_name=input()
